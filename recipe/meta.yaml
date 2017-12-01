@@ -26,7 +26,6 @@ requirements:
   run:
     - python
     - numpy >=1.11
-    - scipy
     - astropy >=1
     - aplus
     - futures >=2.2.0  # [py27]
@@ -36,6 +35,7 @@ requirements:
     - psutil >=1.2.1
     - requests
     - six
+    - cloudpickle
 
 test:
   imports:
