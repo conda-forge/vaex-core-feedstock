@@ -14,14 +14,16 @@ Summary: Core of vaex
 Current build status
 ====================
 
-Linux: [![Circle CI](https://circleci.com/gh/conda-forge/vaex-core-feedstock.svg?style=shield)](https://circleci.com/gh/conda-forge/vaex-core-feedstock)
-OSX: [![TravisCI](https://travis-ci.org/conda-forge/vaex-core-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/vaex-core-feedstock)
-Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/vaex-core-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/vaex-core-feedstock/branch/master)
+[![Linux](https://img.shields.io/circleci/project/github/conda-forge/vaex-core-feedstock/master.svg?label=Linux)](https://circleci.com/gh/conda-forge/vaex-core-feedstock)
+[![OSX](https://img.shields.io/travis/conda-forge/vaex-core-feedstock/master.svg?label=macOS)](https://travis-ci.org/conda-forge/vaex-core-feedstock)
+[![Windows](https://img.shields.io/appveyor/ci/conda-forge/vaex-core-feedstock/master.svg?label=Windows)](https://ci.appveyor.com/project/conda-forge/vaex-core-feedstock/branch/master)
 
 Current release info
 ====================
-Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/vaex-core/badges/version.svg)](https://anaconda.org/conda-forge/vaex-core)
-Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/vaex-core/badges/downloads.svg)](https://anaconda.org/conda-forge/vaex-core)
+
+| Name | Downloads | Version | Platforms |
+| --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-vaex--core-green.svg)](https://anaconda.org/conda-forge/vaex-core) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/vaex-core.svg)](https://anaconda.org/conda-forge/vaex-core) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/vaex-core.svg)](https://anaconda.org/conda-forge/vaex-core) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/vaex-core.svg)](https://anaconda.org/conda-forge/vaex-core) |
 
 Installing vaex-core
 ====================
