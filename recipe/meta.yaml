@@ -1,6 +1,6 @@
 {% set name = "vaex-core" %}
-{% set version = "0.3.2" %}
-{% set sha256 = "9de9eb056b9480a715458cdc40a727a20e78a190eb91dbc36a861b6db29ab5f7" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "2afbdd84dceaf773dcc698d2fb869188de773ff488028cd957271441b93e175a" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
   entry_points:
      - vaex = vaex.__main__:main
 
@@ -23,6 +23,7 @@ requirements:
     - setuptools
     - numpy 1.11.*
     - toolchain
+    - pip
   run:
     - python
     - numpy >=1.11
