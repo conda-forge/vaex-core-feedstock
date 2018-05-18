@@ -23,6 +23,7 @@ requirements:
     - setuptools
     - numpy 1.11.*
     - toolchain
+    - pip
   run:
     - python
     - numpy >=1.11
