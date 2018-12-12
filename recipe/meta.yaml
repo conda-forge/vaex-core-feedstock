@@ -39,6 +39,7 @@ requirements:
     - requests
     - six
     - cloudpickle
+    - tabulate
 
 test:
   imports:
