@@ -1,6 +1,6 @@
 {% set name = "vaex-core" %}
-{% set version = "0.5.1" %}
-{% set sha256 = "3742391b3c0c3029da0a0135ec065bf55c0cc429ad7273bb6450caf7cf1acbfb" %}
+{% set version = "0.6.0" %}
+{% set sha256 = "3c74aaa9c0b9a6b42c7af6be4082f3b5e277ac415dd2109b9965ac5ee409b8ca" %}
 
 package:
   name: {{ name|lower }}
@@ -39,6 +39,7 @@ requirements:
     - requests
     - six
     - cloudpickle
+    - tabulate
 
 test:
   imports:
