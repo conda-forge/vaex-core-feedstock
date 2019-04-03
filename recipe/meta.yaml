@@ -12,6 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
+  skip: True  # [win and py27]
   number: 0
   script: python -m pip install --no-deps --ignore-installed .
   entry_points:
@@ -29,8 +30,9 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - astropy >=1
+    - astropy >=2
     - aplus
+    - tabulate >=0.8.3
     - futures >=2.2.0  # [py27]
     - future >=0.15.2
     - pyyaml
@@ -39,7 +41,6 @@ requirements:
     - requests
     - six
     - cloudpickle
-    - tabulate
 
 test:
   imports:
