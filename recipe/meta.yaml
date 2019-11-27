@@ -43,6 +43,7 @@ requirements:
     - cloudpickle
     - tabulate
     - pandas
+    - dask
 
 test:
   imports:
