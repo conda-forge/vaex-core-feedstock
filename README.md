@@ -1,7 +1,7 @@
 About vaex-core
 ===============
 
-Home: https://www.github.com/maartenbreddels/vaex
+Home: https://www.github.com/vaexio/vaex
 
 Package license: MIT
 
@@ -9,9 +9,9 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/vaex-core-feeds
 
 Summary: Core of vaex
 
-Development: https://www.github.com/maartenbreddels/vaex
+Development: https://www.github.com/vaexio/vaex
 
-Documentation: http://vaex.astro.rug.nl/latest
+Documentation: http://vaex.io/docs/
 
 Current build status
 ====================
