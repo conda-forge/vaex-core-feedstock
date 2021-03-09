@@ -1,6 +1,6 @@
 {% set name = "vaex-core" %}
-{% set version = "2.0.3" %}
-{% set sha256 = "63e0e299af3db9046a8792c1c26b85e4244b787bb4e9bd094a674a742b8cd51b" %}
+{% set version = "4.0.0" %}
+{% set sha256 = "10e171be6816976aa6c7333f5c7c1336f613074c9c33f22b3384a7d924fddc12" %}
 
 package:
   name: {{ name|lower }}
@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win and py27]
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - vaex = vaex.__main__:main
