@@ -1,6 +1,6 @@
 {% set name = "vaex-core" %}
-{% set version = "4.0.1" %}
-{% set sha256 = "327da2367f3c2ce5f66e55e2daf4a66ffba4688e24d2bcfb2eb83059f78d7a06" %}
+{% set version = "4.1.0" %}
+{% set sha256 = "25a12c22b54d99923f5b93a592d1e50e14ca0bd843f189333d7517c54b027748" %}
 
 package:
   name: {{ name|lower }}
@@ -20,6 +20,11 @@ build:
 
 requirements:
   build:
+    - python                                 # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}     # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
+    - numpy                                  # [build_platform != target_platform]
+    - pybind11                               # [build_platform != target_platform]
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
   host:
