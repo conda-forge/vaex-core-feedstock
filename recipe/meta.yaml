@@ -51,6 +51,7 @@ requirements:
     - pyarrow >=3.0
     - frozendict
     - blake3
+    - filelock
 
 test:
   imports:
