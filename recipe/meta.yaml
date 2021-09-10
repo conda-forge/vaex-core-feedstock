@@ -1,6 +1,6 @@
 {% set name = "vaex-core" %}
-{% set version = "4.4.0" %}
-{% set sha256 = "73178515d2ce9f5c92d1e66e999fe385d263027480875ff3a6b2fad6378e2f97" %}
+{% set version = "4.5.0" %}
+{% set sha256 = "e97a739bb83eb82773b28fdeb9ec787260b7e3108361c390e9cf8a08a5d4b6ea" %}
 
 package:
   name: {{ name|lower }}
@@ -51,6 +51,7 @@ requirements:
     - pyarrow >=3.0
     - frozendict
     - blake3
+    - filelock
 
 test:
   imports:
