@@ -52,6 +52,8 @@ requirements:
     - frozendict
     - blake3
     - filelock
+    - pydantic
+    - rich
 
 test:
   imports:
