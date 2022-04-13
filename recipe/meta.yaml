@@ -52,7 +52,7 @@ requirements:
     - frozendict
     - blake3
     - filelock
-    - pydantic
+    - pydantic >= 1.8.0
     - rich
 
 test:
