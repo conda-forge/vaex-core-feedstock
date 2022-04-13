@@ -1,6 +1,6 @@
 {% set name = "vaex-core" %}
-{% set version = "4.9.0" %}
-{% set sha256 = "c1d3dfefd4d2d5a7c2750a3ff15cbb07d19a7fa1a28e706f6c156c10e5941803" %}
+{% set version = "4.9.1" %}
+{% set sha256 = "60562b6244e20111fdb98bab2a3d7c310320abd1a182899bd50c90680f2b2ff6" %}
 
 package:
   name: {{ name|lower }}
@@ -52,7 +52,7 @@ requirements:
     - frozendict
     - blake3
     - filelock
-    - pydantic
+    - pydantic >=1.8.0
     - rich
 
 test:
