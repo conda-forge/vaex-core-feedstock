@@ -12,7 +12,6 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: true  # [win and py27]
   number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -26,6 +25,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib('c') }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -38,7 +38,6 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - aplus
     - tabulate >=0.8.3
-    - futures >=2.2.0  # [py27]
     - future >=0.15.2
     - pyyaml
     - progressbar2
