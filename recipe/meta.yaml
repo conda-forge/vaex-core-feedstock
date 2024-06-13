@@ -13,7 +13,7 @@ source:
 
 build:
   skip: true  # [win and py27]
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - vaex = vaex.__main__:main
@@ -26,6 +26,7 @@ requirements:
     - numpy                                  # [build_platform != target_platform]
     - pybind11                               # [build_platform != target_platform]
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
   host:
     - python
@@ -35,7 +36,6 @@ requirements:
     - pcre
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - aplus
     - tabulate >=0.8.3
     - futures >=2.2.0  # [py27]
