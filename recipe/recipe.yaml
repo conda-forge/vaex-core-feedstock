@@ -1,0 +1,92 @@
+context:
+  version: "4.20.0"
+
+package:
+  name: vaex-core
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/v/vaex-core/vaex_core-${{ version }}.tar.gz
+  sha256: 5b4e590486720775232c6225eb0f23ce961208989bf6d2663482240841a3ccd2
+
+build:
+  number: 0
+  script:
+    content: |
+      ${{ PYTHON }} -c "import pathlib; files = [('vendor/boost/boost/numeric/conversion/udt_builtin_mixture_enum.hpp','enum udt_builtin_mixture_enum','enum udt_builtin_mixture_enum : int'),('vendor/boost/boost/numeric/conversion/int_float_mixture_enum.hpp','enum int_float_mixture_enum','enum int_float_mixture_enum : int')]; [print('WARNING: pattern not found in', f) if o not in (t := pathlib.Path(f).read_text(encoding='utf-8')) else pathlib.Path(f).write_text(t.replace(o, n), encoding='utf-8') for f, o, n in files]"
+      ${{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
+  python:
+    entry_points:
+      - vaex = vaex.__main__:main
+
+requirements:
+  build:
+    - ${{ compiler('c') }}
+    - ${{ compiler('cxx') }}
+    - ${{ stdlib("c") }}
+    - if: build_platform != target_platform
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - numpy
+  host:
+    - python
+    - setuptools
+    - numpy
+    - pip
+    - pcre
+  run:
+    - python
+    - numpy >=1.19.3,<3
+    - aplus
+    - blake3
+    - cloudpickle
+    - dask !=2022.4.0,<2024.9
+    - filelock
+    - frozendict !=2.2.0
+    - future
+    - if: match(python, "<3.14")
+      then:
+        - nest-asyncio >=1.3.3
+      else:
+        - nest-asyncio2 >=1.7.4
+    - if: match(python, "<3.15")
+      then:
+        - pandas >=1.0,<3
+      else:
+        - pandas >=3.1,<4
+    - if: win
+      then:
+        - pyarrow >=5.0.0,!=21.0.0
+      else:
+        - pyarrow >=5.0.0
+    - pydantic >=1.8.0
+    - pyyaml
+    - rich
+    - six
+    - tabulate >=0.8.3
+
+tests:
+  - python:
+      imports:
+        - vaex
+        - vaex.vaexfast
+        - vaex.core
+      pip_check: true
+
+about:
+  homepage: https://www.github.com/vaexio/vaex
+  summary: Core of vaex
+  description: |
+    Core of vaex - a high performance Python library for lazy Out-of-Core
+    DataFrames to visualize and explore big tabular datasets.
+  license: MIT
+  license_file: LICENSE.txt
+  documentation: http://vaex.io/docs/
+  repository: https://www.github.com/vaexio/vaex
+
+extra:
+  recipe-maintainers:
+    - maartenbreddels
+    - JovanVeljanoski
+    - m0nonoke
