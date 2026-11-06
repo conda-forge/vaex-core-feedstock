@@ -10,7 +10,7 @@ source:
   sha256: 5b4e590486720775232c6225eb0f23ce961208989bf6d2663482240841a3ccd2
 
 build:
-  number: 0
+  number: 1
   script:
     content: |
       ${{ PYTHON }} -c "import pathlib; files = [('vendor/boost/boost/numeric/conversion/udt_builtin_mixture_enum.hpp','enum udt_builtin_mixture_enum','enum udt_builtin_mixture_enum : int'),('vendor/boost/boost/numeric/conversion/int_float_mixture_enum.hpp','enum int_float_mixture_enum','enum int_float_mixture_enum : int')]; [print('WARNING: pattern not found in', f) if o not in (t := pathlib.Path(f).read_text(encoding='utf-8')) else pathlib.Path(f).write_text(t.replace(o, n), encoding='utf-8') for f, o, n in files]"
